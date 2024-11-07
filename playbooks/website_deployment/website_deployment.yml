@@ -30,5 +30,5 @@
     - name: copying the file 
       ansible.builtin.copy:
        src: /tmp/carvilla-v1.0
-       dest: /var/www/html/car
+       dest: /var/www/html/car/
 
