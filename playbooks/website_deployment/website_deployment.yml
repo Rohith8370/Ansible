@@ -9,7 +9,6 @@
 - name: deploying a website
   hosts: all
   become: yes
-
   tasks:
     - name: installing nginx and unzip
       ansible.builtin.apt:
