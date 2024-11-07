@@ -7,7 +7,7 @@
 # sudo mv 2126_antique_cafe/ /var/www/html/cafe
 ---
 - name: deploying a website
-  host: all
+  hosts: all
   become: yes
 
   tasks:
