@@ -1,0 +1,27 @@
+# sudo apt update
+# sudo apt install nginx -y
+# cd /tmp
+# wget https://www.free-css.com/assets/files/free-css-templates/download/page295/antique-cafe.zip
+# sudo apt install unzip -y
+# unzip antique-cafe.zip
+# sudo mv 2126_antique_cafe/ /var/www/html/cafe
+---
+- name: deploying a website
+  host: all
+  become: yes
+
+  tasks:
+  - name: installing nginx and unzip
+    ansible.builtin.apt:
+      name: 
+        - nginx
+        - unzip
+      update_cache: true
+      state: "present"
+
+  - name: downloading the file 
+    ansible.builtin.get_url:
+      url: https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
+      dest: /var/www/html/
+
+
