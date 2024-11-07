@@ -11,17 +11,17 @@
   become: yes
 
   tasks:
-  - name: installing nginx and unzip
-    ansible.builtin.apt:
-      name: 
-        - nginx
-        - unzip
-      update_cache: true
-      state: "present"
+    - name: installing nginx and unzip
+      ansible.builtin.apt:
+        name: 
+         - nginx
+         - unzip
+        update_cache: true
+        state: "present"
 
-  - name: downloading the file 
-    ansible.builtin.get_url:
-      url: https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
-      dest: /var/www/html/
+    - name: downloading the file 
+      ansible.builtin.get_url:
+        url: https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
+        dest: /var/www/html/
 
 
