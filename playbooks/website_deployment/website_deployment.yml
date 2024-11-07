@@ -21,6 +21,14 @@
     - name: downloading the file 
       ansible.builtin.get_url:
         url: https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
-        dest: /var/www/html/
+        dest: /tmp/carvilla.zip
+    - name: unzip the file 
+      ansible.builtin.unarchive:
+        src: /tmp/carvilla.zip
+        dest: /tmp/carvilla
 
+    - name: copying the file 
+      ansible.builtin.copy:
+       src: /tmp/carvilla
+       dest: /var/www/html/car
 
