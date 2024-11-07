@@ -25,10 +25,10 @@
     - name: unzip the file 
       ansible.builtin.unarchive:
         src: /tmp/carvilla.zip
-        dest: /tmp/carvilla
+        dest: /tmp/carvilla/
 
     - name: copying the file 
       ansible.builtin.copy:
-       src: /tmp/carvilla
+       src: /tmp/carvilla/
        dest: /var/www/html/car
 
